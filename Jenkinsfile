@@ -1,8 +1,8 @@
-node
+node {'slave_1'}
  {
   
   def mavenHome = tool name: "maven3.6.3"
-  
+  /*
       echo "GitHub BranhName ${env.BRANCH_NAME}"
       echo "Jenkins Job Number ${env.BUILD_NUMBER}"
       echo "Jenkins Node Name ${env.NODE_NAME}"
@@ -23,7 +23,7 @@ node
  sh "${mavenHome}/bin/mvn clean package"
  }
  
-  /*
+  
  stage("ExecuteSonarQubeReport")
  {
  sh "${mavenHome}/bin/mvn sonar:sonar"
