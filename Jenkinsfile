@@ -1,4 +1,4 @@
-node
+node {'slave_1'}
  {
   
   def mavenHome = tool name: "maven3.6.3"
@@ -20,7 +20,7 @@ node
  
  stage("Build")
  {
- sh "${mavenHome}/bin/mvn clean package"
+ sh "${mavenHome}/bin/mvn clean compile"
  }
  
   /*
